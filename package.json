@@ -14,7 +14,7 @@
     }
   },
   "lint-staged": {
-    "*.{js}": [
+    "*.{js,json}": [
       "pretty-quick --write --no-semi --single-quote",
       "git add",
       "npm test"
