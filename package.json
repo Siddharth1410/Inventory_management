@@ -6,8 +6,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "test": "mocha ./test --recursive --exit --timeout 15000",
-    "precommit": "lint-staged"
+    "test": "mocha ./test --recursive --exit --timeout 15000"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js}": [
