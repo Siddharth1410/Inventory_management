@@ -6,20 +6,18 @@
   "scripts": {
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "test": "mocha --recursive --exit --timeout 15000",
+    "test": "mocha ./test --recursive --exit --timeout 15000",
     "document": "apidoc -i ./routes/"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged & npm test"
     }
   },
   "lint-staged": {
-    "!(doc)/*.{js,json}": [
+    "*.{js,json}": [
       "pretty-quick --write --no-semi --single-quote",
-      "git add",
-      "npm test",
-      "apidoc -i ./routes/"
+      "git add"
     ]
   },
   "apidoc": {
