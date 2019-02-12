@@ -9,6 +9,9 @@ var binScannerRouter = require('./routes/binScanner')
 
 var app = express()
 
+// Setup database connection
+var db = require('./db')
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
